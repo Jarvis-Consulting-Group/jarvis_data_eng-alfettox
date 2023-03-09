@@ -1,5 +1,12 @@
+
+--psql
+
+-- Giovanni De Franceschi
+
 \c host_agent
 
+
+--create table to store the node specifications
 CREATE TABLE IF NOT EXISTS PUBLIC.host_info 
  ( 
      id               SERIAL NOT NULL, 
@@ -16,6 +23,8 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info
      CONSTRAINT host_info_un UNIQUE (hostname)
 );
 
+
+-- craeate a table to store the usage of the resources
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage
 (
 	id 		SERIAL PRIMARY KEY,
