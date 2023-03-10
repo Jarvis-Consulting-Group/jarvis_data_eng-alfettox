@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 #Giovanni De Franceschi
@@ -40,7 +41,7 @@ disk_available=$(df $PWD | awk '/[0-9]%/{print $(NF-3)}')
 
 #Define the insertion statement
 insert_stmt="INSERT INTO host_usage(id, hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, l2_cache, total_mem)
-VALUES('$host_id','$hostname',$cpu_number','$cpu_architecture','$cpu_model','$cpu_mhz','$l1_cache','$total_mem')"
+VALUES('$host_id','$hostname','$cpu_number','$cpu_architecture','$cpu_model','$cpu_mhz','$l1_cache','$total_mem')"
 
 #print the inserted statement to the terminal
 echo "$insert_stmt";

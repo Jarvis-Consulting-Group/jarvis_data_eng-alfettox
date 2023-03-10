@@ -1,4 +1,7 @@
 # Introduction
+Designerd and implemented a Linux cluster monitoring agent. The system is composed by bash scripts that retrieve the system information from the hosting node and a database where the information it's stored.
+The database is updated regularly using the cron command with the informations provided by all the nodes. The database is Postgres running on a Linux alpine
+
 (about 100-150 words)
 Discuss the design of the project. What does this project/product do? Who are the users? What are the technologies you have used? (e.g. bash, docker, git, etc..)
 
