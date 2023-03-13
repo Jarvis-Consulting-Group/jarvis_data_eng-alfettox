@@ -34,7 +34,7 @@
   ],
   "jarvis_projects": [
     {
-      "description": "Designed and implemented a scalable software using Bash scripts, PostgreSQL, Docker containerization, IntelliJ, and Linux commands to monitor a Linux CentOS computer cluster. The scripts gather real-time CPU and Memory usage data and store it in a PostgreSQL database, allowing users to extract insights for optimizing system resources.",
+      "description": "Designed and implemented a scalable Linux cluster monitoring agent using bash scripts. The system allows users to keep track of a cluster's hardware and usage information in real-time. The data is updated regularly using the cron command, ensuring that the information about the cluster's performance is always up-to-date. Used languages are bash scripting, sql scripting, markdown.  Used technologies are Linux, bash, docker, PostgreSQL, IntelliJ, draw.io",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     },
