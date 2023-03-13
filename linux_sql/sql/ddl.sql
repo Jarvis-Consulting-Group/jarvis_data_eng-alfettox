@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info
      "timestamp"      TIMESTAMP NULL, 
      total_mem        INT4 NULL, 
 
-     CONSTRAINT host_info_pk PRIMARY KEY (id), 
-     CONSTRAINT host_info_un UNIQUE (hostname)
+     CONSTRAINT host_info_pk PRIMARY KEY (id) 
+     
 );
 
 

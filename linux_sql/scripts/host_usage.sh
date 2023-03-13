@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Giovanni De Franceschi
+
 #Retrieve the parameters from the command line
 psql_host=$1
 psql_port=$2
@@ -13,27 +15,51 @@ if [ "$#" -ne 5 ]; then
     exit 1
 fi
 
-hostname=$(hostname -f)
 
-#Gather the system informations
-lscpu_out=`lscpu`
-cpu_number=$(echo "$lscpu_out"  | egrep "^CPU\(s\):" | awk '{print $2}' | xargs)
-cpu_architecture=$(echo "$lscpu_out" | grep "Architecture:" | awk '{print $2}')
-cpu_model=$(echo "$lscpu_out" | grep "Model name:" | awk -F: '{print $2}' | xargs)
-cpu_mhz=$(echo "$lscpu_out" | grep "CPU MHz:" | awk '{print $3}' | xargs)
-l2_cache=$(echo "$lscpu_out" | grep "L2 cache:" | awk '{print $3}' | xargs)
-total_mem=$(vmstat --unit M | tail -1 | awk '{print $4}')
 timestamp=$(date +"%Y-%m-%d %T")
+hostname=$(hostname -f)
 
 #Gather the usage informations
 memory_free=$(vmstat --unit M | tail -1 | awk -v col="4" '{print $col}')
-cpu_idle=$(vmstat | tail -1 | awk -v col="15" '{print $col}')
-cpu_kernel=$(vmstat | tail -1 | awk -v col="14" '{print $col}')
-disk_io=$(vmstat --unit M -d | tail -1 | awk -v col="10" '{print $col}')
-disk_available=$(df -h / | tail -1 | awk '{print $4}')
+cpu_idle=$(vmstat | awk 'NR==3{print $15}')
+cpu_kernel=$(vmstat | awk 'NR==3{print $14}')
+disk_io=$(vmstat -d | awk 'NR==3{print $10}')
+disk_available=$(df -BM / | awk 'NR==2{print $4}' | sed 's/M//')
 
-#Print to the console the informations
-echo "Hostname: $hostname"
-echo "Number of CPUs: $cpu_number"
+echo $memory_free
+echo $cpu_idle
+echo $cpu_kernel
+echo $disk_io
+echo $disk_available
 
-exit 0;
+insert_statement="INSERT INTO host_usage (
+	timestamp,
+	host_id, 
+	memory_free,
+	cpu_idle, 
+	cpu_kernel,
+	disk_io, 
+	disk_available 
+) VALUES (
+	'${timestamp}', 
+	    (
+      SELECT
+        id
+      FROM
+        host_info
+      WHERE
+        hostname = '$hostname'
+      LIMIT 2
+	 ),  
+	'${memory_free}',
+	'${cpu_idle}', 
+	'${cpu_kernel}',
+	'${disk_io}', 
+	'${disk_available}'
+);"
+
+export PGPASSWORD=$psql_password
+psql -h $psql_host -U $psql_user -d $db_name -p $psql_port -c "$insert_statement"
+
+exit $?
+

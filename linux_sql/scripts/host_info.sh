@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 #Giovanni De Franceschi
@@ -10,45 +9,57 @@ db_name=$3
 psql_user=$4
 psql_password=$5
 
+
 #Check how many arguments have been provided at launch
 if [ "$#" -ne 5 ]; then
-    echo "Illegal number of parameters"
+    echo "Incorrect number of arguments given"
     exit 1
 fi
 
 #Retrieve and store the node specifications
 hostname=$(hostname -f)
 lscpu_out=$(lscpu)
-cpu_number=$(lscpu | egrep "^CPU\(s\)\:" | awk '{print $2}')
-hostname=$hostname
-cpu_number=$cpu_number
-cpu_architecture=$(lscpu | grep "Architecture" | awk '/Architecture/{print $2; exit}')
-cpu_model=$(lscpu | grep "Model" | awk '/Model/{print $2; exit}')
-cpu_mhz=$(lscpu | grep "CPU MHz" | awk '/MHz/{print $3; exit}')
-l2_cache=$(lscpu | grep "L2" | awk '/L2/{print $3; exit}')
-total_mem=$(vmstat --unit M | tail -1 | awk '{print $4}')
-timestamp=$(date "+%Y-%m-%d %H:%M:%S")
 
-#Retrieve and store the usage informations
-memory_free=$(vmstat --unit M | tail -1 | awk -v col="4" '{print $col}')
-cpu_idle=$(vmstat | awk '{print $15}'| tail -1)
-cpu_kernel=$(vmstat | awk '{print $14}' | tail -1)
-disk_io=$(vmstat --unit M -d | tail -1 | awk -v col="10" '{print $col}')
-disk_available=$(df $PWD | awk '/[0-9]%/{print $(NF-3)}')
+cpu_number=$(echo "$lscpu_out" | awk '/^CPU\(s\)/{print $2}')
+cpu_architecture=$(echo "$lscpu_out" | awk '/^Architecture/{print $2}')
+cpu_model=$(echo "$lscpu_out" | awk '/^Model name/{print $3,$4,$5}')
+cpu_mhz=$(echo "$lscpu_out" | awk '/^CPU MHz/{print $3}')
+l2_cache=$(echo "$lscpu_out" | awk '/^L2 cache/{print int($3)}')
+total_mem=$(vmstat --unit M | awk 'NR==3{print $4}')
+timestamp=$(date +"%Y-%m-%d %T") 
 
-#Find the id in host_info table
-#host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";
 
-#Define the insertion statement
-insert_stmt="INSERT INTO host_usage(id, hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, l2_cache, total_mem)
-VALUES('$host_id','$hostname','$cpu_number','$cpu_architecture','$cpu_model','$cpu_mhz','$l1_cache','$total_mem')"
+#print the varaibles values
+echo "Hostname: $hostname"
+echo "Number of CPUs: $cpu_number"
+echo "CPU Architecture: $cpu_architecture"
+echo "CPU Model: $cpu_model"
+echo "CPU Speed (MHz): $cpu_mhz"
+echo "L2 Cache Size (KB): $l2_cache"
+echo "Total Memory (MB): $total_mem"
+echo "Timestamp: $timestamp"
 
-#print the inserted statement to the terminal
-echo "$insert_stmt";
 
-#Save the password as global variable
-export PGPASSWORD=$psql_password 
+insert_stmt="INSERT INTO host_info (
+hostname, \
+cpu_number, \
+cpu_architecture, \
+cpu_model, \
+cpu_mhz, \
+L2_cache, \
+total_mem, \
+timestamp) VALUES (
+'$hostname', \
+'$cpu_number', \
+'$cpu_architecture', \
+'$cpu_model', \
+'$cpu_mhz', \
+'$l2_cache', \
+'$total_mem', \
+'$timestamp');"
 
-#Execute the statement
-psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
+# save the password as global variable and execute
+export PGPASSWORD=$psql_password
+psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_user" -c "$insert_stmt"
 exit $?
+
