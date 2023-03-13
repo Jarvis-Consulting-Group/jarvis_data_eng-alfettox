@@ -1,45 +1,81 @@
 # Introduction
-Designerd and implemented a Linux cluster monitoring agent. The system is composed by bash scripts that retrieve the system information from the hosting node and a database where the information it's stored.
-The database is updated regularly using the cron command with the informations provided by all the nodes. The database is Postgres running on a Linux alpine
 
-(about 100-150 words)
-Discuss the design of the project. What does this project/product do? Who are the users? What are the technologies you have used? (e.g. bash, docker, git, etc..)
+Designed and implemented a Linux cluster monitoring agent using bash scripts. 
+The system allows users to keep track of a cluster's hardware and usage information in real-time.
+The project has been implemented using bash scripting in combination of sql scripting.
+To accomplish this, four bash scripts have been created.
+The data is updated regularly using the cron command, ensuring
+that the information about the cluster's performance is always up-to-date.
 
 # Quick Start
-Use markdown code block for your quick-start commands
-- Start a psql instance using psql_docker.sh
-- Create tables using ddl.sql
-- Insert hardware specs data into the DB using host_info.sh
-- Insert hardware usage data into the DB using host_usage.sh
-- Crontab setup
+- Create a docker container running Alpine Linux using psql_docker.sh bash script.
+- Start a Postgres SQL instance using psql_docker.sh bash script.
+- Create tables using ddl.sql.
+- Fetch hardware specifications of the nodes and store them to the DB using host_info.sh.
+- Fetch hardware usage data into the DB using host_usage.sh.
+- Automate the execution of host_usage.sh with the Crontab setup.
 
 # Implemenation
-Discuss how you implement the project.
+The first script, psql_docker.sh, sets up a Docker container running the Postgres database on
+a Linux Alpine system.
+The sql scripts create the tables to store the hardware information and the cpu and memory usage.
+The other two scripts, host_info and host_usage fetch the system information from each hosting node
+(CPU and memory usage) as well the hardware specifications on the running machine as well of
+hardware components.
+
 ## Architecture
-Draw a cluster diagram with three Linux hosts, a DB, and agents (use draw.io website). Image must be saved to the `assets` directory.
+The following graph schematically represents the configuration of a cluster with 3 nodes and a containerized database instance.
+![my image](./assets/cluster.jpg)
 
 ## Scripts
-Shell script description and usage (use markdown code block for script usage)
-- psql_docker.sh
-- host_info.sh
-- host_usage.sh
-- crontab
+- psql_docker.sh (set up a docker container with Linux Alpine and start a Postgres Instance)
+- host_info.sh (fetch the information about the node's hardware and store it to the database)
+- host_usage.sh (fetch the information about the node's usage and store it to the database)
+- crontab (setup automatic uploads each minutes for the cpu usage and memory usage)
+- ddl.sql (define the tables for the retrieved information)
 - queries.sql (describe what business problem you are trying to resolve)
 
 ## Database Modeling
-Describe the schema of each table using markdown table syntax (do not put any sql code)
-- `host_info`
-- `host_usage`
+### HOST INFO TABLE
+
+| Column Name       | Data Type         | Constraints                 |
+|-------------------|-------------------|-----------------------------|
+| id                | SERIAL NOT NULL   | PRIMARY KEY (id)            |
+| hostname          | VARCHAR NOT NULL  |                             |
+| cpu_number        | INT2 NOT NULL     |                             |
+| cpu_architecture  | VARCHAR NOT NULL  |                             |
+| cpu_model         | VARCHAR NOT NULL  |                             |
+| cpu_mhz           | FLOAT8 NOT NULL   |                             |
+| l2_cache          | INT4 NOT NULL     |                             |
+| timestamp         | TIMESTAMP NULL    |                             |
+| total_mem         | INT4 NULL         |                             |
+
+
+### HOST USAGE TABLE
+
+| Column Name    | Data Type       | Constraints                                            |
+|----------------|----------------|--------------------------------------------------------|
+| id             | SERIAL          | PRIMARY KEY, NOT NULL                                  |
+| timestamp      | TIMESTAMP      | NOT NULL                                               |
+| host_id        | INTEGER        | NOT NULL, FOREIGN KEY REFERENCES PUBLIC.host_info(id)  |
+| memory_free    | INTEGER         |                                                        |
+| cpu_idle       | INTEGER         |                                                        |
+| cpu_kernel     | INTEGER         |                                                        |
+| disk_io        | INTEGER         |                                                        |
+| disk_available | INTEGER         |                                                        |
+
 
 # Test
-How did you test your bash scripts DDL? What was the result?
+The monitoring system has been tested on a single node running Linux CentOS. 
 
 # Deployment
-How did you deploy your app? (e.g. Github, crontab, docker)
+The app has been deployed to run automatically on the machine where is installed.
+Cron command will execute the scripts each minute.
+The SQL server has been deployed on an Alpine Linux container using Docker.
+A volume has been used to store the data permanent.
+All the scripts have been uploaded to my GitHub repository.
 
 # Improvements
-Write at least three things you want to improve 
-e.g. 
-- handle hardware updates 
-- blah
-- blah
+- I would implement an ASCII graphical representation of the usage of all the connected nodes.
+- It could be interesting to create another table with the downtime of the machines on the cluster.
+- Enable the access to the information from a webpage accessible from anywhere.
