@@ -4246,7 +4246,7 @@ ALTER TABLE ONLY members
 
 CREATE INDEX "bookings.memid_facid"
   ON cd.bookings
-  USING btree
+  USING btree
   (memid, facid);
 
 CREATE INDEX "bookings.facid_memid"
