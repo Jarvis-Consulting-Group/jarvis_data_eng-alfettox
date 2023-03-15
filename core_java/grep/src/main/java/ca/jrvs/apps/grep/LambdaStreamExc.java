@@ -1,5 +1,8 @@
 package ca.jrvs.apps.grep;
 
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -17,7 +20,7 @@ public class LambdaStreamExc {
         return null;
     }
 
-    Stream <String> to UpperCase (String ... strings);
+    Stream <String>to UpperCase (String ... strings);
 
     /**
      * filter strings that contains the pattern

@@ -2,7 +2,6 @@ package ca.jrvs.apps.grep;
 
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
