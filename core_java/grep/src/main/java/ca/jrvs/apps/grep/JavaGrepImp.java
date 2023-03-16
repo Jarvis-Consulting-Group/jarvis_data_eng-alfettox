@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class JavaGrepImp implements JavaGrep{
+public class JavaGrepImp implements JavaGrep {
 
     final Logger logger = LoggerFactory.getLogger(JavaGrep.class);
 
@@ -15,10 +15,10 @@ public class JavaGrepImp implements JavaGrep{
     private String outFile;
 
 
-    public static void main (String [] args){
+    public static void main(String[] args) {
 
-        if (args.length!=3){
-        throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
+        if (args.length != 3) {
+            throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
 
         }
 
@@ -29,10 +29,10 @@ public class JavaGrepImp implements JavaGrep{
         javaGrepImp.setRootPath(args[1]);
         javaGrepImp.setOutFile(args[2]);
 
-        try{
+        try {
             javaGrepImp.process();
 
-        } catch (Exception ex){
+        } catch (Exception ex) {
             javaGrepImp.logger.error("Error:Unable to process", ex);
         }
 
