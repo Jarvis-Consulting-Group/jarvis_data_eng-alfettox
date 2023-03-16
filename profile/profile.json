@@ -1,0 +1,133 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "GPA: 3.91/4.0"
+      ],
+      "degree": "Cert.Univ. full time Computer Science and Information Technology",
+      "department": "Computer Science",
+      "duration": "2022-2023",
+      "school_name": "McGill scs"
+    },
+    {
+      "awards_achievements": [
+        "Final grade 110/110"
+      ],
+      "degree": "Master of Architectural Engineering",
+      "department": "Architecture",
+      "duration": "2004-2010",
+      "school_name": "Polytecnic of Turin (Italy)"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_alfettox",
+  "highlighted_projects": [
+    {
+      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
+      "name": "Web app for resturant"
+    },
+    {
+      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "git_url": null,
+      "name": "Machine Learning"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Designed and implemented a scalable Linux cluster monitoring agent using bash scripts. The system allows users to keep track of a cluster's hardware and usage information in real-time. The data is updated regularly using the cron command, ensuring that the information about the cluster's performance is always up-to-date. Used languages are bash scripting, sql scripting, markdown.  Used technologies are Linux, bash, docker, PostgreSQL, IntelliJ, draw.io",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Giovanni De Franceschi",
+  "others": [
+    {
+      "bullets": [
+        "Frontend Developer Career Path Certificate, Scrimba (2023)",
+        "Python Data Structures, Coursera - University of Michigan (2020)",
+        "Responsibe web design, freeCodeCamp (2021)"
+      ],
+      "title": "Certificates"
+    },
+    {
+      "bullets": [
+        "3D visualization, VR, BIM",
+        "Trekking",
+        "Architecture and design"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "duration": "2020-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "XYZ Company",
+      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "duration": "2019",
+      "title": "Tutor"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Microservices",
+      "Linux / Bash",
+      "Android development",
+      "Agile / SCRUM",
+      "Azure / GCP"
+    ],
+    "familiar": [
+      "Netwoks",
+      "Linux / Bash",
+      "SOAP",
+      "System security",
+      "System administration"
+    ],
+    "proficient": [
+      "Java OOP",
+      "JavaScript, React",
+      "HTML, CSS",
+      "RDBMS MySQL, SQL Server",
+      "Git"
+    ]
+  },
+  "summary": "As a passionate learner of software development and the ever-evolving world of technology, I recently completed my studies in Computer Science and Information Technology at McGill SCS The program provided me with a comprehensive education that prepared me to become a full stack developer. The coursework was both theoretical and practical, consisting of several assignments in each course. As a result, I gained proficiency in various areas, such as front-end development (JavaScript, React, HTML, and CSS), back-end (microservices, REST, SOAP) and databases (MySQL and SQL Server). Additionally, I learned OOP, design patterns, algorithms, networking and security. Working on assignments in groups allowed me to apply Agile methodologies, version control, and improved my communication skills. Prior to my current role as a Full Stack Software Developer at Jarvis, I worked as an Architect and Project Coordinator in both Europe and French Canada. These experiences provided me with valuable skills in project management, team coordination, and working collaboratively. At Jarvis, I apply the most modern technologies in the field, which provides me with an opportunity to take on new challenges and grow professionally. I am passionate about technology and committed to enhancing my skills to deliver high-quality software solutions. My previous experiences combined with my technical skills and willingness to learn, allow me to be an asset to any team. I look forward to exploring new opportunities and contributing to the growth of the technology industry."
+}
