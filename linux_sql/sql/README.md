@@ -1,9 +1,15 @@
 #### Giovanni De Franceschi
 
-PSQL Database management: Created and managed a PSQL database using the most commands.
+# Introduction
+Utilizing DDL, DML, DQL a database is populated, managed and queried to practice with an existing database composed by 3 entitites. 
+The database is PostgreSQL. The queries are executed in the CLI and in DBeaver database software management. 
+
+# SQL Queries
+
+######  Database instance deplloyiment
 
 ERD of the database with 3 entitites
-![This is an image](https://pgexercises.com/img/schema-horizontal.svg)
+![This is an image](https://pgexercises.com/img/schema-horizontal.png)
 
 ### Check if the spql container is already running
     docker ps -a
@@ -25,6 +31,8 @@ ERD of the database with 3 entitites
 
 ### switch to the schema cd
     SET search_path = cd;
+
+###### Table Setup (DDL)
 
 ### CREATE A TABLE MEMBERS
     CREATE TABLE cd.members
@@ -67,6 +75,9 @@ ERD of the database with 3 entitites
            CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
         );
 
+
+###### Data Manipulation Language (DML)
+
 ### ADD A LINE IN FACILITIES TABLES
         INSERT INTO facilities(facid,Name,membercost,guestcost,initialoutlay,monthlymaintenance) VALUES (9,'Spa',20,30,100000,800);
 
@@ -93,7 +104,7 @@ ERD of the database with 3 entitites
 ### DELETE MEMBER 37
     DELETE FROM members WHERE memid='37';
 
-
+###### Data Query Language (DQL)
 ### How can you produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
     exercises=# select facid, name, membercost, monthlymaintenance from facilities where membercost >0 AND membercost < monthlymaintenance /50;
 
