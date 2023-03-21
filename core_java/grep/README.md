@@ -1,11 +1,6 @@
-# GREP APPLICATION
+# Core Java Apps
+This project consists of three Java applications below
 
-### USAGE: regex rootPath outFile
-
-    - regex: a special text string for describing a search pattern
-    - rootPath: root directory path
-    - outFile: output file name
-
-Similar to: 
-
-    egrep -r {regex} {rootPath} > {outFile}
+1. [Java Grep App](./grep)
+2. [JDBC App](./jdbc)
+3. [Twitter CRUD App](./twitter)
