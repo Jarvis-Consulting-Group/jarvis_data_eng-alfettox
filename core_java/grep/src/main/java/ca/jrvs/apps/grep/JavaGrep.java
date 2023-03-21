@@ -3,8 +3,6 @@ package ca.jrvs.apps.grep;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public interface JavaGrep {
 
@@ -21,7 +19,9 @@ public interface JavaGrep {
    * @return files under the rootDir
    */
 
-  List <File> listFiles(String rootDir);
+  List <File> listFiles(String rootDir) throws IOException;
+
+  List<String> readLines(File inputFile) throws IOException;
 
   /**
    * check if a line contains the regex pattern (passed by user)
@@ -30,6 +30,8 @@ public interface JavaGrep {
    */
 
   boolean containsPatterns(String line);
+
+  boolean containsPattern(String line);
 
   /**
    * Write lines to a file

@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bb09544-0f1a-4895-b742-8d8b53f067ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/log4j-1.2.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/JavaGrepImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/grep.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/grep.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/JavaGrep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/JavaGrep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/practice/Greetings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/practice/Greetings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/practice/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/practice/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/ca/jrvs/apps/src/RegexExc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/RegexExc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ca/jrvs/apps/practice/Greetings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ca/jrvs/apps/practice/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/JavaGrepImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/jrvs/apps/grep/JavaGrepImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +101,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "configurable.group.build",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -120,7 +109,7 @@
     <configuration name="JavaGrepImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.jrvs.apps.grep.JavaGrepImp" />
       <module name="grep" />
-      <option name="PROGRAM_PARAMETERS" value=".*IllegalArgumentsException.* ./grep/src ./tmp/grep.out" />
+      <option name="PROGRAM_PARAMETERS" value=".*IllegalArgumentsException.* src/ tmp/grep.out" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ca.jrvs.apps.grep.*" />
@@ -148,7 +137,7 @@
       <workItem from="1678885265864" duration="1028000" />
       <workItem from="1678889662989" duration="12175000" />
       <workItem from="1678968531890" duration="54000" />
-      <workItem from="1679404703720" duration="2518000" />
+      <workItem from="1679404703720" duration="8691000" />
     </task>
     <servers />
   </component>
