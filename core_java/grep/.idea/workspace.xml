@@ -22,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GitToolBoxStore">
@@ -33,12 +38,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feature/grep" />
-                    <option name="lastUsedInstant" value="1678889700" />
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1679360773" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1678889699" />
+                    <option name="branchName" value="feature/grep" />
+                    <option name="lastUsedInstant" value="1678889700" />
                   </RecentBranch>
                 </list>
               </option>
@@ -81,16 +86,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/centos/dev/jarvis_data_eng_alfettox",
+    "last_opened_file_path": "/home/centos/dev/jarvis_data_eng_alfettox/core_java/grep/src/slf4j-api-2.0.6.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "settings.editor.selected.configurable": "configurable.group.build",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -98,7 +103,7 @@
     <configuration name="JavaGrepImp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.jrvs.apps.grep.JavaGrepImp" />
       <module name="grep" />
-      <option name="PROGRAM_PARAMETERS" value=".*IllegalArgumentsException.* ./grep/src /tmp/grep.out" />
+      <option name="PROGRAM_PARAMETERS" value=".*IllegalArgumentsException.* src/ tmp/grep.out" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ca.jrvs.apps.grep.*" />
@@ -126,11 +131,23 @@
       <workItem from="1678885265864" duration="1028000" />
       <workItem from="1678889662989" duration="12175000" />
       <workItem from="1678968531890" duration="54000" />
+      <workItem from="1679404703720" duration="9217000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
